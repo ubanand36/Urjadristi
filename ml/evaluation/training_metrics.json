@@ -1,0 +1,195 @@
+{
+  "trained_at_utc": "2026-10-12T00:25:38Z",
+  "random_seed": 42,
+  "models": [
+    {
+      "name": "Valve audio anomaly (not leak-specific)",
+      "metrics": {
+        "validation": {
+          "accuracy": 0.9722222222222222,
+          "precision_fault": 1.0,
+          "recall_fault": 0.9444444444444444,
+          "f1_fault": 0.9714285714285714,
+          "confusion_matrix_labels": [
+            "normal",
+            "fault"
+          ],
+          "confusion_matrix": [
+            [
+              36,
+              0
+            ],
+            [
+              2,
+              34
+            ]
+          ],
+          "false_positives": 0,
+          "false_negatives": 2,
+          "roc_auc": 1.0,
+          "pr_auc_average_precision": 1.0
+        },
+        "test": {
+          "accuracy": 0.9333333333333333,
+          "precision_fault": 0.9482758620689655,
+          "recall_fault": 0.9166666666666666,
+          "f1_fault": 0.9322033898305084,
+          "confusion_matrix_labels": [
+            "normal",
+            "fault"
+          ],
+          "confusion_matrix": [
+            [
+              57,
+              3
+            ],
+            [
+              5,
+              55
+            ]
+          ],
+          "false_positives": 3,
+          "false_negatives": 5,
+          "roc_auc": 0.9836111111111111,
+          "pr_auc_average_precision": 0.984404351924159
+        }
+      },
+      "train_recordings": 360,
+      "test_recordings": 120,
+      "train_labels": {
+        "1": 180,
+        "0": 180
+      },
+      "test_labels": {
+        "0": 60,
+        "1": 60
+      },
+      "test_machine_ids": [
+        "id_00",
+        "id_02",
+        "id_04",
+        "id_06"
+      ],
+      "split": "recording-level stratified holdout; same valve IDs occur in train/test"
+    },
+    {
+      "name": "MAFAULDA normal vs imbalance vibration",
+      "metrics": {
+        "validation": {
+          "accuracy": 0.75,
+          "precision_fault": 1.0,
+          "recall_fault": 0.6,
+          "f1_fault": 0.75,
+          "confusion_matrix_labels": [
+            "normal",
+            "fault"
+          ],
+          "confusion_matrix": [
+            [
+              6,
+              0
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "false_positives": 0,
+          "false_negatives": 4,
+          "roc_auc": 0.9666666666666667,
+          "pr_auc_average_precision": 0.980909090909091
+        },
+        "test": {
+          "accuracy": 0.9,
+          "precision_fault": 0.875,
+          "recall_fault": 0.875,
+          "f1_fault": 0.875,
+          "confusion_matrix_labels": [
+            "normal",
+            "fault"
+          ],
+          "confusion_matrix": [
+            [
+              11,
+              1
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "false_positives": 1,
+          "false_negatives": 1,
+          "roc_auc": 0.9895833333333333,
+          "pr_auc_average_precision": 0.9861111111111112
+        }
+      },
+      "train_recordings": 62,
+      "test_recordings": 20,
+      "train_labels": {
+        "1": 31,
+        "0": 31
+      },
+      "test_labels": {
+        "1": 8,
+        "0": 12
+      },
+      "severity_groups_in_train": [
+        "fault:10g",
+        "fault:15g",
+        "fault:20g",
+        "fault:25g",
+        "fault:30g",
+        "fault:35g",
+        "fault:6g",
+        "normal"
+      ]
+    },
+    {
+      "name": "Steel load type (not idle detector)",
+      "metrics": {
+        "accuracy": 0.7347317351598174,
+        "macro_precision": 0.6484364421728077,
+        "macro_recall": 0.6494793128414132,
+        "macro_f1": 0.6480159325657354,
+        "confusion_matrix_labels": [
+          "Light_Load",
+          "Maximum_Load",
+          "Medium_Load"
+        ],
+        "confusion_matrix": [
+          [
+            3428,
+            46,
+            230
+          ],
+          [
+            8,
+            631,
+            777
+          ],
+          [
+            14,
+            784,
+            1090
+          ]
+        ],
+        "test_period_start": "2018-10-20 00:00:00",
+        "test_period_end": "2018-12-31 23:45:00"
+      },
+      "train_rows": 28032,
+      "test_rows": 7008,
+      "labels": {
+        "Light_Load": 18072,
+        "Medium_Load": 9696,
+        "Maximum_Load": 7272
+      }
+    }
+  ],
+  "limitations": [
+    "MIMII valve anomaly labels are not leak-specific.",
+    "MAFAULDA lab accelerometers are not equivalent to smartphone motion sensors.",
+    "The steel dataset predicts its own Light/Medium/Maximum load labels; it is not idle/standby ground truth.",
+    "No electrical fault labels were supplied; live electrical checks remain meter-versus-configured-baseline rules."
+  ]
+}

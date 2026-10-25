@@ -1,0 +1,74 @@
+{
+  "trained_at_utc": "2026-10-12T00:35:15+00:00",
+  "random_seed": 42,
+  "models": [
+    {
+      "name": "MAFAULDA normal vs imbalance microphone audio",
+      "metrics": {
+        "validation": {
+          "accuracy": 0.6875,
+          "precision_fault": 0.8571428571428571,
+          "recall_fault": 0.6,
+          "f1_fault": 0.7058823529411765,
+          "confusion_matrix_labels": [
+            "normal",
+            "fault"
+          ],
+          "confusion_matrix": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "false_positives": 1,
+          "false_negatives": 4,
+          "roc_auc": 0.7666666666666666,
+          "pr_auc_average_precision": 0.8911796536796537
+        },
+        "test": {
+          "accuracy": 0.95,
+          "precision_fault": 1.0,
+          "recall_fault": 0.875,
+          "f1_fault": 0.9333333333333333,
+          "confusion_matrix_labels": [
+            "normal",
+            "fault"
+          ],
+          "confusion_matrix": [
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "false_positives": 0,
+          "false_negatives": 1,
+          "roc_auc": 0.9479166666666666,
+          "pr_auc_average_precision": 0.9519230769230769
+        }
+      },
+      "train_recordings": 62,
+      "validation_recordings": 16,
+      "test_recordings": 20,
+      "test_labels": {
+        "1": 8,
+        "0": 12
+      },
+      "split": "same recording-level train/validation/test partitions as vibration model"
+    }
+  ],
+  "limitations": [
+    "Initial cross-machine holdout result is preserved separately in early_cross_machine_audio_diagnostic.json.",
+    "MIMII valve anomaly labels are not leak-specific.",
+    "MAFAULDA lab accelerometers are not equivalent to smartphone motion sensors.",
+    "The steel dataset predicts its own Light/Medium/Maximum load labels; it is not idle/standby ground truth.",
+    "No electrical fault labels were supplied; live electrical checks remain meter-versus-configured-baseline rules."
+  ]
+}

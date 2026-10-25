@@ -1,0 +1,170 @@
+{
+  "audio": {
+    "archive": "C:\\Users\\ak059\\Downloads\\6_dB_valve.zip",
+    "wav_count": 4170,
+    "uncompressed_bytes": 10675533600,
+    "groups_machine_and_label": {
+      "valve/id_00/abnormal": 119,
+      "valve/id_00/normal": 991,
+      "valve/id_02/abnormal": 120,
+      "valve/id_02/normal": 708,
+      "valve/id_04/abnormal": 120,
+      "valve/id_04/normal": 1000,
+      "valve/id_06/abnormal": 120,
+      "valve/id_06/normal": 992
+    },
+    "sample_file": "valve/id_00/normal/00000000.wav",
+    "sample_rate_hz": 16000,
+    "channels": 8,
+    "duration_seconds": 10.0,
+    "dtype": "int16",
+    "label_note": "normal/abnormal labels; abnormal does not identify a fault subtype"
+  },
+  "vibration": {
+    "archives": [
+      {
+        "archive": "C:\\Users\\ak059\\Downloads\\imbalance.zip",
+        "csv_files": 333,
+        "group_counts": {
+          "10g": 48,
+          "15g": 48,
+          "20g": 49,
+          "25g": 47,
+          "30g": 47,
+          "35g": 45,
+          "6g": 49
+        },
+        "sample_file": "imbalance/10g/13.9264.csv",
+        "sample_columns": 8,
+        "sample_rows_checked": 10,
+        "sample_missing_values": 0,
+        "sample_exact_duplicate_rows": 0,
+        "sampling_rate_hz": 50000,
+        "duration_seconds_per_capture": 5,
+        "column_order": [
+          "tachometer",
+          "underhang_axial",
+          "underhang_radial",
+          "underhang_tangential",
+          "overhang_axial",
+          "overhang_radial",
+          "overhang_tangential",
+          "microphone"
+        ],
+        "header": false,
+        "units": "sensor acquisition units; accelerometer values are not smartphone SI readings"
+      },
+      {
+        "archive": "C:\\Users\\ak059\\Downloads\\normal.zip",
+        "csv_files": 49,
+        "group_counts": {
+          "12.288.csv": 1,
+          "13.1072.csv": 1,
+          "14.336.csv": 1,
+          "15.1552.csv": 1,
+          "16.1792.csv": 1,
+          "17.2032.csv": 1,
+          "18.432.csv": 1,
+          "19.6608.csv": 1,
+          "20.2752.csv": 1,
+          "21.7088.csv": 1,
+          "22.3232.csv": 1,
+          "23.552.csv": 1,
+          "24.576.csv": 1,
+          "25.6.csv": 1,
+          "26.624.csv": 1,
+          "27.4432.csv": 1,
+          "28.8768.csv": 1,
+          "29.4912.csv": 1,
+          "30.72.csv": 1,
+          "31.744.csv": 1,
+          "32.9728.csv": 1,
+          "33.5872.csv": 1,
+          "34.2016.csv": 1,
+          "35.4304.csv": 1,
+          "36.4544.csv": 1,
+          "37.6832.csv": 1,
+          "38.2976.csv": 1,
+          "39.3216.csv": 1,
+          "40.3456.csv": 1,
+          "41.7792.csv": 1,
+          "42.3936.csv": 1,
+          "43.6224.csv": 1,
+          "44.6464.csv": 1,
+          "45.4656.csv": 1,
+          "46.2848.csv": 1,
+          "47.7184.csv": 1,
+          "48.9472.csv": 1,
+          "49.5616.csv": 1,
+          "51.8144.csv": 1,
+          "52.4288.csv": 1,
+          "53.8624.csv": 1,
+          "54.6816.csv": 1,
+          "55.7056.csv": 1,
+          "56.7296.csv": 1,
+          "57.9584.csv": 1,
+          "58.7776.csv": 1,
+          "59.5968.csv": 1,
+          "60.416.csv": 1,
+          "61.44.csv": 1
+        },
+        "sample_file": "normal/12.288.csv",
+        "sample_columns": 8,
+        "sample_rows_checked": 10,
+        "sample_missing_values": 0,
+        "sample_exact_duplicate_rows": 0,
+        "sampling_rate_hz": 50000,
+        "duration_seconds_per_capture": 5,
+        "column_order": [
+          "tachometer",
+          "underhang_axial",
+          "underhang_radial",
+          "underhang_tangential",
+          "overhang_axial",
+          "overhang_radial",
+          "overhang_tangential",
+          "microphone"
+        ],
+        "header": false,
+        "units": "sensor acquisition units; accelerometer values are not smartphone SI readings"
+      }
+    ],
+    "row_count_method": "250,000 rows per complete MAFAULDA recording; sampled preview is shown above"
+  },
+  "energy": {
+    "archive": "C:\\Users\\ak059\\Downloads\\steel+industry+energy+consumption.zip",
+    "csv_file": "Steel_industry_data.csv",
+    "rows": 35040,
+    "columns": [
+      "date",
+      "Usage_kWh",
+      "Lagging_Current_Reactive.Power_kVarh",
+      "Leading_Current_Reactive_Power_kVarh",
+      "CO2(tCO2)",
+      "Lagging_Current_Power_Factor",
+      "Leading_Current_Power_Factor",
+      "NSM",
+      "WeekStatus",
+      "Day_of_week",
+      "Load_Type"
+    ],
+    "missing_by_column": {},
+    "duplicate_rows": 0,
+    "load_type_counts": {
+      "Light_Load": 18072,
+      "Medium_Load": 9696,
+      "Maximum_Load": 7272
+    },
+    "date_range": [
+      "01/01/2018 00:15",
+      "31/12/2018 00:00"
+    ],
+    "target_note": "Light/Medium/Maximum industrial load labels; not idle/standby labels"
+  },
+  "dataset_limitations": [
+    "Valve audio provides only normal/abnormal labels, not leak-specific ground truth.",
+    "MAFAULDA captures are from a 50 kHz laboratory rig; phone motion sensors have different rate, placement and units.",
+    "Steel energy labels indicate load level, not machine idle/standby or electrical faults.",
+    "No missing/duplicate scan of every row in the multi-gigabyte CSV archives was performed by this quick inspector; sampled rows are explicitly counted above."
+  ]
+}

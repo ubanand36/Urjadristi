@@ -1,0 +1,25 @@
+{
+  "name": "urjadrishti",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "firebase deploy --only hosting",
+    "ml:inspect": "python -m ml.inspect_datasets",
+    "ml:train": "python -m ml.train_models",
+    "ml:api": "python -m uvicorn ml.inference.api:app --host 127.0.0.1 --port 8000 --reload"
+  },
+  "dependencies": {
+    "firebase": "^13.0.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.33.0",
+    "vite": "^8.3.4"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "^1.14.6"
+  }
+}

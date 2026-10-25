@@ -1,0 +1,39 @@
+{
+  "purpose": "Initial cross-machine diagnostic; valve id_06 was entirely excluded from training.",
+  "result": {
+    "name": "Valve audio anomaly (not leak-specific)",
+    "metrics": {
+      "accuracy": 0.39166666666666666,
+      "precision_fault": 0.0,
+      "recall_fault": 0.0,
+      "f1_fault": 0.0,
+      "confusion_matrix_labels": [
+        "normal",
+        "fault"
+      ],
+      "confusion_matrix": [
+        [
+          47,
+          13
+        ],
+        [
+          60,
+          0
+        ]
+      ],
+      "roc_auc": 0.4286111111111111
+    },
+    "train_recordings": 360,
+    "test_recordings": 120,
+    "train_labels": {
+      "1": 180,
+      "0": 180
+    },
+    "test_labels": {
+      "1": 60,
+      "0": 60
+    },
+    "held_out_machine": "id_06"
+  },
+  "interpretation": "This model failed to detect the held-out machine's abnormal class; do not use this result as evidence of cross-machine generalization."
+}

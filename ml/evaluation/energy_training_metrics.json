@@ -1,0 +1,106 @@
+{
+  "trained_at_utc": "2026-10-12T00:30:13+00:00",
+  "random_seed": 42,
+  "models": [
+    {
+      "name": "Steel load type (not idle detector) and 15-minute energy forecast",
+      "metrics": {
+        "validation": {
+          "accuracy": 0.8993531202435312,
+          "macro_precision": 0.8846937792357114,
+          "macro_recall": 0.9044433997363307,
+          "macro_f1": 0.8906908892620781,
+          "confusion_matrix_labels": [
+            "Light_Load",
+            "Maximum_Load",
+            "Medium_Load"
+          ],
+          "confusion_matrix": [
+            [
+              2479,
+              10,
+              314
+            ],
+            [
+              7,
+              945,
+              97
+            ],
+            [
+              4,
+              97,
+              1303
+            ]
+          ],
+          "period_start": "2018-09-13 12:00:00",
+          "period_end": "2018-11-07 05:45:00"
+        },
+        "test": {
+          "accuracy": 0.6579147640791476,
+          "macro_precision": 0.5694143044939276,
+          "macro_recall": 0.5612633553987748,
+          "macro_f1": 0.5614607194844293,
+          "confusion_matrix_labels": [
+            "Light_Load",
+            "Maximum_Load",
+            "Medium_Load"
+          ],
+          "confusion_matrix": [
+            [
+              2429,
+              74,
+              345
+            ],
+            [
+              1,
+              343,
+              688
+            ],
+            [
+              2,
+              688,
+              686
+            ]
+          ],
+          "period_start": "2018-11-07 06:00:00",
+          "period_end": "2018-12-31 23:45:00"
+        }
+      },
+      "forecast_metrics": {
+        "validation": {
+          "mae_kwh": 5.462545406990638,
+          "rmse_kwh": 11.289222928772446,
+          "r2": 0.8634435898340286,
+          "mape_percent": 30.737516075517313,
+          "rows": 5241,
+          "period_start": "2018-09-13 19:00:00",
+          "period_end": "2018-11-07 09:00:00"
+        },
+        "test": {
+          "mae_kwh": 5.21708279939779,
+          "rmse_kwh": 10.24035395136023,
+          "r2": 0.8921638797292183,
+          "mape_percent": 35.85538454275333,
+          "rows": 5242,
+          "period_start": "2018-11-07 09:15:00",
+          "period_end": "2018-12-31 23:30:00"
+        }
+      },
+      "train_rows": 24528,
+      "validation_rows": 5256,
+      "test_rows": 5256,
+      "labels": {
+        "Light_Load": 18072,
+        "Medium_Load": 9696,
+        "Maximum_Load": 7272
+      }
+    }
+  ],
+  "limitations": [
+    "Initial cross-machine holdout result is preserved separately in early_cross_machine_audio_diagnostic.json.",
+    "MIMII valve anomaly labels are not leak-specific.",
+    "MAFAULDA lab accelerometers are not equivalent to smartphone motion sensors.",
+    "The steel dataset predicts its own Light/Medium/Maximum load labels; it is not idle/standby ground truth.",
+    "No electrical fault labels were supplied; live electrical checks remain meter-versus-configured-baseline rules."
+  ]
+}
